@@ -18,7 +18,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Monica Gobbetti — Planos de saúde e odontológicos",
+  title: "Monica Gobbeti | Planos de Saúde Empresariais",
   description:
     "Planos de saúde e odontológicos personalizados para empresas, famílias e beneficiários individuais.",
   icons: {
