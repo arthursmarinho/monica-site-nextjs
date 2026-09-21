@@ -138,7 +138,10 @@ export function Differentiators() {
 
             <div className="mt-8">
               {differentiators.map((item, index) => (
-                <div key={item.phase} className="relative flex gap-4 pb-6 last:pb-0">
+                <div
+                  key={item.phase}
+                  className="relative flex gap-4 pb-6 last:pb-0"
+                >
                   {index < differentiators.length - 1 ? (
                     <span className="absolute left-4 top-8 h-full w-px -translate-x-1/2 bg-maven/20" />
                   ) : null}
