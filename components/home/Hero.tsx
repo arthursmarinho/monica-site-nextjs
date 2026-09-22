@@ -29,6 +29,50 @@ function CheckIcon() {
   );
 }
 
+const partners = [
+  { name: "Bradesco Saúde", logo: "/logos/bradesco-saude.png", width: 2000, height: 713 },
+  { name: "SulAmérica", logo: "/logos/sulamerica.svg", width: 500, height: 128 },
+  { name: "Hapvida", logo: "/logos/hapvida.svg", width: 500, height: 111 },
+  {
+    name: "NotreDame Intermédica",
+    logo: "/logos/notredame-intermedica.png",
+    width: 2000,
+    height: 728,
+  },
+  { name: "MedSênior", logo: "/logos/medsenior.png", width: 2560, height: 885 },
+  { name: "Clinipam", logo: "/logos/clinipam.png", width: 200, height: 200 },
+  { name: "Odontoprev", logo: "/logos/odontoprev.png", width: 563, height: 130 },
+  { name: "Amil", logo: "/logos/amil.svg", width: 273, height: 97 },
+  { name: "Unimed", logo: "/logos/unimed.svg", width: 500, height: 167 },
+];
+
+export function Partners() {
+  const items = [...partners, ...partners];
+  return (
+    <section className="border-y border-black/5 bg-natural py-10">
+      <div className="container-site px-4 md:px-6">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+          Operadoras de saúde e odontológicas
+        </p>
+        <div className="relative mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex w-max animate-marquee items-center gap-14">
+            {items.map((partner, index) => (
+              <Image
+                key={`${partner.name}-${index}`}
+                src={partner.logo}
+                alt={partner.name}
+                width={partner.width}
+                height={partner.height}
+                className="h-10 w-auto shrink-0 object-contain"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] bg-deepest p-3">
