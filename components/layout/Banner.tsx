@@ -1,7 +1,7 @@
 const steps = [
   {
     number: "01",
-    title: "Você preenche o formulário",
+    title: "Você responde algumas perguntas rápidas",
     text: "Conte um pouco sobre o que está procurando.",
   },
   {

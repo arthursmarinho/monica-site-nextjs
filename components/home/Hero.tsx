@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { media } from "@/lib/media";
+import { whatsappUrl } from "@/lib/whatsapp";
+
+const quoteWhatsappUrl = whatsappUrl(
+  "Olá, Monica! Vim pelo site e gostaria de solicitar uma cotação de plano de saúde/odontológico."
+);
 
 const support = [
   "Atendimento personalizado",
@@ -101,6 +107,15 @@ export function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="#cotacao">Quero receber uma cotação</Button>
+              <a
+                href={quoteWhatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-tiny border border-white/80 bg-transparent px-6 py-[0.63rem] text-center text-[1.05rem] font-medium leading-none text-white transition-colors duration-300 hover:bg-white hover:text-deepest"
+              >
+                <WhatsAppIcon />
+                Solicitar cotação pelo WhatsApp
+              </a>
             </div>
             <ul className="mt-6 space-y-2">
               {support.map((item) => (
