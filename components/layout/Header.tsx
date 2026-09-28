@@ -5,35 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-import { media } from "@/lib/media";
 import { whatsappUrl } from "@/lib/whatsapp";
+import { services } from "./nav-menu/data";
+import { MenuBackdrop } from "./nav-menu/MenuBackdrop";
 
 const WHATSAPP_URL = whatsappUrl(
   "Olá! Vim pelo site e gostaria de saber mais sobre os planos de saúde e odontológicos."
 );
-
-const services = [
-  {
-    href: "#por-que-corretor",
-    title: "Por que um corretor",
-    image: media.navGlp1,
-  },
-  {
-    href: "#como-funciona",
-    title: "Como funciona",
-    image: media.navHormone,
-  },
-  {
-    href: "#perfil",
-    title: "Perfil",
-    image: media.navVirtual,
-  },
-  {
-    href: "#faq",
-    title: "FAQ",
-    image: media.navEmployer,
-  },
-];
 
 function Chevron({ open }: { open?: boolean }) {
   return (
@@ -101,37 +79,12 @@ function HeaderBar() {
             onOpen={() => setOpenMenu("services")}
             onClose={() => setOpenMenu(null)}
           >
-            <div className="grid w-[720px] grid-cols-2 gap-3 p-4">
-              {services.map((card) => (
-                <a
-                  key={card.href}
-                  href={card.href}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    setOpenMenu(null);
-                    scrollToSection(card.href);
-                  }}
-                  className="relative flex min-h-[150px] overflow-hidden rounded-small text-white"
-                >
-                  <Image
-                    src={card.image}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="360px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="relative z-10 mt-auto p-4">
-                    <div className="font-serif-italic text-xl leading-tight">
-                      {card.title}
-                    </div>
-                    <div className="mt-1 text-xs text-white/80">
-                      Saiba mais
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
+            <MenuBackdrop
+              onSelect={(href) => {
+                setOpenMenu(null);
+                scrollToSection(href);
+              }}
+            />
           </NavItem>
         </nav>
 
