@@ -51,7 +51,7 @@ export function Highlights() {
                 sizes="(min-width: 768px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
-              <div className="relative z-10 flex h-full min-h-[33.75rem] flex-col justify-between p-6 md:p-8">
+              <div className="relative z-10 flex h-full min-h-[33.75rem] flex-col justify-between p-6 pb-16 md:p-8 mf:pb-24">
                 <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
                 <div>
                   <h3 className="text-2xl font-light md:text-[1.7rem]">

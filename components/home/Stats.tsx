@@ -65,17 +65,20 @@ const stats = [
 
 export function Stats() {
   return (
-    <section id="resultados" className="py-20 md:py-28 scroll-mt-24">
+    <section
+      id="resultados"
+      className="pt-10 pb-20 md:pt-14 md:pb-28 scroll-mt-24"
+    >
       <div className="container-site px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="display-heading text-4xl md:text-5xl lg:text-[3.5rem]">
             Reduzindo custos ao{" "}
             <em className="font-serif-italic">melhorar o cuidado</em>
           </h2>
-          <p className="mt-6 text-lg font-light md:text-xl">
-            Pagando alto no plano? Reajuste sem explicação? Despesa que não cabe
-            no orçamento? Os números abaixo saíram de um caso real — e da
-            solução.
+          <p className="mt-8 text-lg font-light md:mt-12 md:text-xl">
+            Está pagando alto no plano? Sofreu um reajuste sem explicação ou tem
+            uma despesa que não cabe no orçamento? Os números abaixo saíram de
+            um caso real e da sua solução.
           </p>
         </div>
 
