@@ -24,7 +24,7 @@ const columns = [
 ];
 
 const WHATSAPP_URL = whatsappUrl(
-  "Olá! Vim pelo site e gostaria de saber mais sobre os planos de saúde e odontológicos."
+  "Olá! Vim pelo site e gostaria de saber mais sobre os planos de saúde e odontológicos.",
 );
 
 const iconProps = {
@@ -141,9 +141,19 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-16 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-16 grid gap-2 border-t border-white/10 pt-6 text-sm text-white/50 md:grid-cols-3 md:items-center md:gap-6">
             <p>© 2026 Monica Gobbetti. Todos os direitos reservados.</p>
-            <p>Atendimento em todo o Brasil</p>
+            <p className="md:text-center">
+              <a
+                className="underline lg:no-underline hover:text-white hover:text-[15px] transition-all"
+                href="https://cwbranding.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Site feito pela CWBranding
+              </a>
+            </p>
+            <p className="md:text-right">Atendimento em todo o Brasil</p>
           </div>
         </div>
       </div>
