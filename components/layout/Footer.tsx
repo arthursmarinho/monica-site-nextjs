@@ -10,6 +10,7 @@ const columns = [
       { href: "#por-que-corretor", label: "Por que um corretor" },
       { href: "#como-funciona", label: "Como funciona" },
       { href: "#diferencial", label: "Diferencial" },
+      { href: "#depoimentos", label: "Depoimentos" },
     ],
   },
   {
