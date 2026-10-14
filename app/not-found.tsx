@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+
+export const metadata: Metadata = {
+  title: "Página não encontrada",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
@@ -9,14 +15,14 @@ export default function NotFound() {
         Não encontramos essa <em className="font-serif-italic">página</em>
       </h1>
       <p className="mt-4 max-w-md font-light">
-        O link pode estar desatualizado. Volte para a página inicial e explore
-        os programas de cuidado.
+        O link pode estar desatualizado. Volte para a página inicial e conheça
+        as opções de planos de saúde e odontológicos.
       </p>
       <Button href="/" className="mt-8">
         Voltar ao início
       </Button>
-      <Link href="/get-care" className="mt-4 text-sm text-maven">
-        Ou receber cuidado →
+      <Link href="/#cotacao" className="mt-4 text-sm text-maven">
+        Ou solicitar uma cotação →
       </Link>
     </div>
   );

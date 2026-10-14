@@ -7,10 +7,12 @@ import { QuoteForm } from "@/components/home/QuoteForm";
 import { Differentiators, Stats } from "@/components/home/Stats";
 import { Stories } from "@/components/home/Stories";
 import { Banner } from "@/components/layout/Banner";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <Hero />
       <Partners />
       <Highlights />

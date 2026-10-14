@@ -47,7 +47,7 @@ function SupportIcon() {
   );
 }
 
-const questions = [
+export const questions = [
   {
     question: "Posso escolher o plano de acordo com meu orçamento?",
     answer:
