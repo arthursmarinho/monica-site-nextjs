@@ -3,7 +3,7 @@ import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
 // Domínio público do site. Defina NEXT_PUBLIC_SITE_URL no ambiente de produção
 // caso o domínio seja diferente do padrão abaixo.
 const url = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.monicagobbetti.com.br"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.monicagobbeti.com.br"
 ).replace(/\/$/, "");
 
 export const site = {

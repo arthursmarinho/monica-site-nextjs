@@ -62,6 +62,13 @@ export const metadata: Metadata = {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
+  // Códigos dos painéis de webmaster. O Google já é verificado pelo arquivo
+  // public/google*.html; o Bing entra pela variável NEXT_PUBLIC_BING_VERIFICATION.
+  verification: {
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : undefined,
+  },
   other: {
     "geo.region": "BR-PR",
     "geo.placename": "Curitiba",
