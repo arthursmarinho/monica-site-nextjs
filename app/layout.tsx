@@ -26,7 +26,6 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
-  keywords: [...site.keywords],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
   publisher: site.name,
@@ -59,8 +58,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   // Códigos dos painéis de webmaster. O Google já é verificado pelo arquivo
   // public/google*.html; o Bing entra pela variável NEXT_PUBLIC_BING_VERIFICATION.

@@ -24,6 +24,9 @@ const graph = [
       postalCode: site.address.postalCode,
       addressCountry: site.address.country,
     },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${site.address.street}, ${site.address.district}, ${site.address.city} - ${site.address.region}, ${site.address.postalCode}`,
+    )}`,
     areaServed: [
       { "@type": "City", name: "Curitiba" },
       { "@type": "State", name: "Paraná" },

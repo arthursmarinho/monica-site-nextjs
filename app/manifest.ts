@@ -12,8 +12,8 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: site.colors.natural,
     theme_color: site.colors.deepest,
     icons: [
-      // O arquivo tem extensão .png, mas o conteúdo é JPEG.
-      { src: "/favicon.png", sizes: "1024x1024", type: "image/jpeg" },
+      { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { src: "/favicon.png", sizes: "512x512", type: "image/png" },
     ],
   };
 }

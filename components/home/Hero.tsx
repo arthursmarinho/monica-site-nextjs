@@ -66,7 +66,9 @@ export function Partners() {
               <Image
                 key={`${partner.name}-${index}`}
                 src={partner.logo}
-                alt={partner.name}
+                // A segunda volta do carrossel é só visual: sem alt repetido.
+                alt={index < partners.length ? partner.name : ""}
+                aria-hidden={index >= partners.length || undefined}
                 width={partner.width}
                 height={partner.height}
                 className="h-10 w-auto shrink-0 object-contain"

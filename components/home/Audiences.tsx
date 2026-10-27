@@ -96,10 +96,18 @@ export function Audiences() {
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
             <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6 md:p-8">
-              <div className="max-w-[32ch] text-white">
-                <p className="font-serif-italic text-2xl">{active.title}</p>
-                <p className="mt-2 text-sm text-white/85">{active.text}</p>
-              </div>
+              {/* Todos os perfis ficam no HTML (buscadores leem o texto);
+                  só o ativo aparece. */}
+              {profiles.map((item) => (
+                <div
+                  key={item.id}
+                  hidden={item.id !== active.id}
+                  className="max-w-[32ch] text-white"
+                >
+                  <p className="font-serif-italic text-2xl">{item.title}</p>
+                  <p className="mt-2 text-sm text-white/85">{item.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

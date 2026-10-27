@@ -68,7 +68,6 @@ function Avatar({ name }: { name: string }) {
 
 export function Stories() {
   const [active, setActive] = useState(0);
-  const story = stories[active];
 
   return (
     <section
@@ -112,38 +111,43 @@ export function Stories() {
             ))}
           </div>
 
-          <div
-            key={story.name}
-            role="tabpanel"
-            className="animate-quiz-in mt-10 grid items-center gap-10 md:grid-cols-[1fr_auto]"
-          >
-            <blockquote>
-              <QuoteMark className="h-8 w-11 text-electric" />
-              <p className="mt-6 font-serif-italic text-2xl leading-snug md:text-[2rem]">
-                {story.quote}
-              </p>
-              <footer className="mt-8">
-                <p className="font-medium">{story.name}</p>
-                <p className="text-sm text-white/75">{story.context}</p>
-              </footer>
-            </blockquote>
-
-            <a
-              href={story.print.src}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ver mensagem original de ${story.name}`}
-              className="relative mx-auto block aspect-9/16 w-64 overflow-hidden rounded-[1.75rem] border-[6px] border-deepest bg-deepest shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] lg:w-72"
+          {/* Todos os depoimentos ficam no HTML (buscadores leem o texto);
+              só o ativo aparece. */}
+          {stories.map((story, index) => (
+            <div
+              key={story.name}
+              role="tabpanel"
+              hidden={index !== active}
+              className="animate-quiz-in mt-10 grid items-center gap-10 md:grid-cols-[1fr_auto]"
             >
-              <Image
-                src={story.print}
-                alt={`Print da mensagem de ${story.name} no WhatsApp`}
-                fill
-                sizes="18rem"
-                className={`object-cover ${story.printFocus}`}
-              />
-            </a>
-          </div>
+              <blockquote>
+                <QuoteMark className="h-8 w-11 text-electric" />
+                <p className="mt-6 font-serif-italic text-2xl leading-snug md:text-[2rem]">
+                  {story.quote}
+                </p>
+                <footer className="mt-8">
+                  <p className="font-medium">{story.name}</p>
+                  <p className="text-sm text-white/75">{story.context}</p>
+                </footer>
+              </blockquote>
+
+              <a
+                href={story.print.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver mensagem original de ${story.name}`}
+                className="relative mx-auto block aspect-9/16 w-64 overflow-hidden rounded-[1.75rem] border-[6px] border-deepest bg-deepest shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)] lg:w-72"
+              >
+                <Image
+                  src={story.print}
+                  alt={`Print da mensagem de ${story.name} no WhatsApp`}
+                  fill
+                  sizes="18rem"
+                  className={`object-cover ${story.printFocus}`}
+                />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
