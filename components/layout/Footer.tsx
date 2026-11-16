@@ -7,19 +7,19 @@ const columns = [
   {
     title: "Sobre o atendimento",
     links: [
-      { href: "#por-que-corretor", label: "Por que um corretor" },
-      { href: "#como-funciona", label: "Como funciona" },
-      { href: "#diferencial", label: "Diferencial" },
-      { href: "#depoimentos", label: "Depoimentos" },
+      { href: "/#por-que-corretor", label: "Por que um corretor" },
+      { href: "/#como-funciona", label: "Como funciona" },
+      { href: "/#diferencial", label: "Diferencial" },
+      { href: "/#depoimentos", label: "Depoimentos" },
     ],
   },
   {
     title: "Página",
     links: [
-      { href: "#resultados", label: "Resultados" },
-      { href: "#perfil", label: "Perfil" },
-      { href: "#faq", label: "FAQ" },
-      { href: "#cotacao", label: "Cotação" },
+      { href: "/#resultados", label: "Resultados" },
+      { href: "/#perfil", label: "Perfil" },
+      { href: "/#faq", label: "FAQ" },
+      { href: "/#cotacao", label: "Cotação" },
     ],
   },
 ];

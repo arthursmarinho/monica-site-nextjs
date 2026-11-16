@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -30,10 +30,12 @@ function Chevron({ open }: { open?: boolean }) {
 
 export function Header() {
   const pathname = usePathname();
-  return <HeaderBar key={pathname} />;
+  // Fora da home (ex.: 404) não há foto escura atrás do header: ele já começa
+  // com fundo claro, logo escuro e texto escuro.
+  return <HeaderBar key={pathname} solid={pathname !== "/"} />;
 }
 
-function HeaderBar() {
+function HeaderBar({ solid }: { solid: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -45,7 +47,8 @@ function HeaderBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const light = scrolled || mobileOpen;
+  const light = solid || scrolled || mobileOpen;
+  const scrollToSection = useScrollToSection();
 
   const closeMobile = () => setMobileOpen(false);
 
@@ -150,13 +153,20 @@ function HeaderBar() {
   );
 }
 
-function scrollToSection(hash: string) {
-  const id = hash.replace("#", "");
-  const target = document.getElementById(id);
-  if (!target) return;
+function useScrollToSection() {
+  const router = useRouter();
+  return (hash: string) => {
+    const id = hash.replace("#", "");
+    const target = document.getElementById(id);
+    // A seção só existe na home: em outra página (ex.: 404), vai até ela lá.
+    if (!target) {
+      router.push(`/${hash}`);
+      return;
+    }
 
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
-  window.history.replaceState(null, "", hash);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", hash);
+  };
 }
 
 function NavItem({
@@ -174,6 +184,7 @@ function NavItem({
   onClose: () => void;
   children: React.ReactNode;
 }) {
+  const scrollToSection = useScrollToSection();
   return (
     <div className="relative" onMouseEnter={onOpen} onMouseLeave={onClose}>
       <a
