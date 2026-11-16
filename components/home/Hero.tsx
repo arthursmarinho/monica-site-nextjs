@@ -89,7 +89,7 @@ export function Hero() {
           src={media.hero}
           alt="Uma mãe e duas crianças rindo juntas no sofá"
           fill
-          priority
+          preload
           className="object-cover object-[70%_center]"
           sizes="100vw"
         />

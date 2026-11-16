@@ -24,7 +24,7 @@ export function InteriorPage({
     <div className="bg-natural">
       <section className="relative min-h-[80svh] overflow-hidden pt-32">
         <div className="absolute inset-0">
-          <Image src={image} alt="" fill className="object-cover" priority sizes="100vw" />
+          <Image src={image} alt="" fill className="object-cover" preload sizes="100vw" />
           <div className="absolute inset-0 bg-deepest/55" />
         </div>
         <div className="container-site relative z-10 flex min-h-[70svh] items-end px-4 pb-16 md:px-6">

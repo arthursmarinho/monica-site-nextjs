@@ -81,6 +81,23 @@ const graph = [
     publisher: { "@id": businessId },
   },
   {
+    "@type": "WebPage",
+    "@id": `${site.url}/#webpage`,
+    url: `${site.url}/`,
+    name: site.title,
+    description: site.description,
+    inLanguage: "pt-BR",
+    isPartOf: { "@id": websiteId },
+    about: { "@id": businessId },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${site.url}/monica-2.jpg`,
+      width: 864,
+      height: 1296,
+    },
+    dateModified: site.updatedAt,
+  },
+  {
     "@type": "FAQPage",
     "@id": `${site.url}/#faq`,
     isPartOf: { "@id": websiteId },

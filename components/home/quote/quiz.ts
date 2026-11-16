@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 export type Field =
@@ -126,6 +127,7 @@ export function useQuiz() {
       return;
     }
     const url = whatsappUrl(buildWhatsappMessage(answers));
+    trackEvent("generate_lead", { method: "cotacao_whatsapp", perfil: answers.perfil });
     window.open(url, "_blank", "noopener,noreferrer");
     setSentUrl(url);
   }

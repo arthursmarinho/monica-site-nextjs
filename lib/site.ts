@@ -9,7 +9,10 @@ const url = (
 export const site = {
   url,
   name: "Monica Gobbetti",
-  title: "Monica Gobbetti | Corretora de Planos de Saúde e Odontológicos em Curitiba",
+  // Até ~60 caracteres para não ser cortado no Google.
+  title: "Corretora de Planos de Saúde em Curitiba | Monica Gobbetti",
+  // Data da última alteração real de conteúdo (sitemap e JSON-LD).
+  updatedAt: "2026-11-16",
   shortDescription: "Corretora de planos de saúde e odontológicos",
   description:
     "Corretora de planos de saúde e odontológicos em Curitiba. Compare Unimed, Amil, Bradesco, SulAmérica e mais, com atendimento do primeiro contato ao pós-venda.",

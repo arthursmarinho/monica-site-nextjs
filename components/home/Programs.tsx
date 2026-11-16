@@ -54,9 +54,11 @@ export function Highlights() {
               <div className="relative z-10 flex h-full min-h-[33.75rem] flex-col justify-between p-6 pb-16 md:p-8 mf:pb-24">
                 <span className={`h-2.5 w-2.5 rounded-full ${item.accent}`} />
                 <div>
-                  <h3 className="text-2xl font-light md:text-[1.7rem]">
+                  {/* <p> e não <h3>: são atalhos para as seções abaixo, que
+                      já têm o mesmo título em <h2>. */}
+                  <p className="text-2xl font-light md:text-[1.7rem]">
                     {item.title}
-                  </h3>
+                  </p>
                   <p className="mt-4 max-w-[40ch] text-[15px] leading-relaxed text-white/90">
                     {item.text}
                   </p>

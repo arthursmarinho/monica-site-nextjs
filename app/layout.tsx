@@ -2,19 +2,23 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@/components/seo/Analytics";
 import { site } from "@/lib/site";
 import "./globals.css";
 
+// Só o subset "latin": já cobre todo o português (ç, ã, é...). O "latin-ext"
+// dobrava as fontes pré-carregadas e atrasava a foto do topo (LCP).
 const inter = Inter({
   variable: "--font-helvetica-now",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
 
+// A Fraunces só aparece em itálico (.font-serif-italic).
 const fraunces = Fraunces({
   variable: "--font-ivar",
-  subsets: ["latin", "latin-ext"],
-  style: ["italic", "normal"],
+  subsets: ["latin"],
+  style: ["italic"],
   weight: ["400", "500"],
 });
 
@@ -92,6 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </div>
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

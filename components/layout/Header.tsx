@@ -63,7 +63,7 @@ function HeaderBar() {
             width={160}
             height={40}
             className="h-30 w-30"
-            priority
+            loading="eager"
           />
         </Link>
 

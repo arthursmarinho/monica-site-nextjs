@@ -97,9 +97,9 @@ export function Footer() {
 
             {columns.map((col) => (
               <div key={col.title}>
-                <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-electric">
+                <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-electric">
                   {col.title}
-                </h3>
+                </p>
                 <ul className="space-y-3">
                   {col.links.map((link) => (
                     <li key={link.href}>
@@ -116,9 +116,9 @@ export function Footer() {
             ))}
 
             <div>
-              <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-electric">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-electric">
                 Contato
-              </h3>
+              </p>
               <ul className="space-y-4 text-[15px] text-white/75">
                 <li className="flex gap-3">
                   <span className="mt-0.5 text-electric">
