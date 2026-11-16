@@ -17,6 +17,8 @@ export const site = {
   description:
     "Corretora de planos de saúde e odontológicos em Curitiba. Compare Unimed, Amil, Bradesco, SulAmérica e mais, com atendimento do primeiro contato ao pós-venda.",
   locale: "pt_BR",
+  // Perfis oficiais, ligados ao site pelo JSON-LD (sameAs).
+  social: ["https://www.instagram.com/monica_gobbeti/"],
   phone: `+${WHATSAPP_NUMBER}`,
   phoneDisplay: "(41) 99840-3859",
   address: {

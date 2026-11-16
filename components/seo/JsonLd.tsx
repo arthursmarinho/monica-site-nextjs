@@ -14,6 +14,7 @@ const graph = [
     description: site.description,
     url: site.url,
     logo: `${site.url}/logo-dark.png`,
+    sameAs: [...site.social],
     image: [`${site.url}/opengraph-image`, `${site.url}/monica-2.jpg`],
     telephone: site.phone,
     address: {
@@ -70,6 +71,7 @@ const graph = [
     image: `${site.url}/monica-2.jpg`,
     worksFor: { "@id": businessId },
     url: site.url,
+    sameAs: [...site.social],
   },
   {
     "@type": "WebSite",
